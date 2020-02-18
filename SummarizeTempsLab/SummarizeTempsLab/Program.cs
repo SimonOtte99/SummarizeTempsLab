@@ -21,7 +21,7 @@ namespace SummarizeTempsLab
                 int threshold;
                 input = Console.ReadLine();
                 threshold = int.Parse(input);
-
+                
                 int sumTemps = 0;
                 int numberbelow = 0;
                 int numberabove = 0;
@@ -55,7 +55,21 @@ namespace SummarizeTempsLab
                     
 
                 }
+                Console.WriteLine("Temperatures above threshold = " + numberabove);
 
+                Console.WriteLine("Temperatures below threshold = " + numberbelow);
+
+                int tempaverage = sumTemps / tempcount;
+                Console.WriteLine("Average temp = " + tempaverage);
+
+                using (StreamWriter sw = new StreamWriter("output.txt"))
+                {
+                    sw.WriteLine("Temperatures above threshold = " + numberabove);
+                    sw.WriteLine("Temperatures below threshold =" + numberbelow);
+                    sw.WriteLine("Average Temperature =" + tempaverage);
+
+
+                }
             }
             else
             {
